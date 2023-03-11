@@ -11,6 +11,10 @@ int main()
     memset(strcwd,0,sizeof(strcwd));//将无符号字符0复制到strcwd数组的前301个字符，其实就是用0填充整个数组
     getcwd(strcwd,sizeof(strcwd));//获取当前目录的绝对路径，存入strcwd数组
     printf("=%s=\n",strcwd);//打印当前目录的绝对路径
+    chdir("/home");//切换目录至home
+    memset(strcwd,0,sizeof(strcwd));
+    getcwd(strcwd,sizeof(strcwd));
+    printf("=%s=\n",strcwd);
     mkdir("/home/hello/c",00755);//创建个具有读/写/执行权限的目录可固定为00755
     rmdir("/home/hello/c");//删除目录c
     ReadDir("/home/hello");//递归获取目录文件
